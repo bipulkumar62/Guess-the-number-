@@ -1,75 +1,43 @@
-# Guess-the-number
+# 🎯 Number Guessing Game (Python)
 
-A simple command-line game written in Python. The computer chooses a random number from 1 to 100, and the player keeps guessing until they find it.
+A lightweight, interactive command-line application where players attempt to guess a randomly generated target number between 1 and 100. Built entirely using standard Python modules.
 
-How the game works
+![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen.svg)
 
-Enter a number between 1 and 100.
+---
 
-If the guess is too high, the game asks for a lower number.
+## 📌 Features
 
-If the guess is too low, the game asks for a higher number.
+* **Real-Time Feedback:** Instantly guides the player with `"Lower"` or `"Higher"` prompts after each turn.
+* **Attempt Tracking:** Keeps track of total guesses taken to complete the game.
+* **Zero External Dependencies:** Uses only Python's built-in `random` module.
 
-When the number is correct, the game displays the total number of attempts.
+---
 
-Requirements
+## 🕹️ How It Works
 
-Python 3
+1. The game selects a hidden integer strictly between **1 and 100**.
+2. The player inputs a numeric guess.
+3. If the guess is:
+   * **Too high:** The program requests a lower number.
+   * **Too low:** The program requests a higher number.
+4. Once guessed correctly, the total attempt count is displayed, and the program exits.
 
-No external packages are required.
+---
 
-Run the game
+## 🚀 Getting Started
 
-Save the Python code as guess_the_number.py.
+### Prerequisites
 
-Open a terminal in the same folder.
+* [Python 3.x](https://www.python.org/downloads/) installed on your system.
 
-Run:
+### Installation & Execution
 
+1. Clone this repository or copy the `guess_the_number.py` file to your target directory.
+2. Open your terminal or command prompt in that directory.
+3. Run the script:
+
+```bash
 python guess_the_number.py
-
-On some systems, use python3 instead:
-
-python3 guess_the_number.py
-
-Python code
-
-import random
-
-number = random.randint(1, 100)
-guesses = 0
-guess = None
-
-while guess != number:
-    guess = int(input("Guess the number: "))
-    guesses += 1
-
-    if guess > number:
-        print("Lower number, please.")
-    elif guess < number:
-        print("Higher number, please.")
-
-print(f"You guessed the number {number} correctly in {guesses} attempts!")
-
-Example
-
-Guess the number: 70
-Lower number, please.
-Guess the number: 40
-Higher number, please.
-Guess the number: 55
-You guessed the number 55 correctly in 3 attempts!
-
-Possible improvements
-
-Reject input outside the 1–100 range.
-
-Handle non-numeric input without crashing.
-
-Add difficulty levels or a maximum number of attempts.
-
-Let the player start another round.
-
-License
-
-This project is free to use for learning and practice.
